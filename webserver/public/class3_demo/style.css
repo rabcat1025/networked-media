@@ -1,0 +1,19 @@
+p {
+    background-color: aqua;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+/* aspect ratio not change if you change "width" OR "height */
+/* you can modify both width and height but may lead to image distortion  */
+#myimg {
+    width: 300px ;
+}
+
+.nav-link{
+    text-decoration: dotted;
+    color: chocolate ;
+    border: 2px dashed yellow;
+}

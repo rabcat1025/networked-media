@@ -1,0 +1,101 @@
+/* p {
+    background-color: aqua;
+} */
+
+body {
+    /* background-color: blueviolet; */
+    /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), */
+    color:blue;
+    background-image: url("bg-img1.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bolder;
+}
+
+/* aspect ratio not change if you change "width" OR "height */
+/* you can modify both width and height but may lead to image distortion  */
+#myimg {
+    width: 300px ;
+}
+
+.nav-link{
+    text-decoration: dotted;
+    color: chocolate ;
+    border: 2px dashed yellow;
+}
+
+.red-font{
+    color: red;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+#div1 {
+    position: absolute;
+    color:aliceblue;
+    top: 38%;
+    right: 20%;
+    /* font-size: 18px; */
+    /* width: 200px;
+    height: 200px; */
+    /* border: 2px dashed rgb(175, 51, 134); */
+  }
+
+
+  #div2 {
+    position: absolute;
+    color:rgb(83, 175, 104);
+    top: 60%;
+    right: 80%;
+  }
+
+  #div3 {
+    position: absolute;
+    color:rgb(77, 129, 175);
+    top: 1%;
+    right: 10%;
+  }
+  #div4 {
+    position: absolute;
+    color:rgb(25, 87, 32);
+    top: 95%;
+    right: 50%;
+  }
+
+  #recycle{
+    width: 70px;  
+    position:absolute;
+    left:3%;
+    top:3%;
+  }
+  #map{
+    width: 70px;  
+    position:absolute;
+    left:3%;
+    top:18%;
+  }
+  #bed{
+    width: 70px;  
+    position:absolute;
+    left:3%;
+    top:30%;
+  }
+  #emily2{
+    color: green;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 100%;
+  }
+
+  #emily2page9{
+    color: green;
+    position: absolute;
+    text-align: center;
+    top: 28%;
+    left: 8%;
+  }
