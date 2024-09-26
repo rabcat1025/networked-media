@@ -1,0 +1,29 @@
+.myclock{
+    position: absolute;
+    cursor: help;
+    /* cursor: crosshair; */
+}
+
+.container {
+    position: relative;
+    height: 33.3%;
+    width: 25%;
+}
+
+#hovertime {
+    position: fixed;
+    opacity: 0;
+    right:50%;
+    bottom:1%;
+    /* fade in / out   transition: opacity 0.3s; */
+    transition: opacity 0.3s; 
+    font-family: system-ui;
+    font-weight: lighter;
+    font-size: larger;
+
+}
+
+/* learnt from Coding Lab & in class*/
+.myclock:hover #hovertime {
+    opacity: 1;
+}
