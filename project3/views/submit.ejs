@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Submit</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <%- include("layout/nav") %>
+    <main>
+      <div class="input-container">
+        <!-- Submit instruction -->
+        <div class="input-instruction">
+          <h2>Submit A Gift You Received</h2>
+          <p>
+            We welcome you to contribute a cherished gift to this collection:
+          </p>
+          <ul>
+            <li>
+              Upload an image/gif of the gift with a
+              <span style="font-weight: 700">transparent</span> background.
+            </li>
+            <li>Name the gift: Give it a title that reflects its meaning.</li>
+            <li>
+              Share its story: Write about the gift, the person who gave it to
+              you, or the memory it holds — whatever feels meaningful to you.
+            </li>
+          </ul>
+          <p>
+            Notes: Gifts can be digital, intangible, fragmented; the names of
+            the sender/receiver can be pseudonyms, abbreviations, or any other
+            identifier.
+          </p>
+          <p>⋆˚✿˖°</p>
+        </div>
+
+        <!-- Submit form -->
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+          <label for="item-name">Name</label>
+          <input
+            type="text"
+            name="title"
+            id="item-name"
+            placeholder="Give it a name"
+            required
+          />
+          <label for="item-description">Description</label>
+          <textarea
+            type="text"
+            name="itemDes"
+            id="item-description"
+            placeholder="Write something about the gift, the sender, the meaning it holds, or nothing..."
+            rows="6"
+          ></textarea>
+          <input type="submit" name="submitbutton" value="Submit" />
+          <input type="file" name="theimage" required />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
