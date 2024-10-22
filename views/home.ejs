@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include("layout/nav") %>
+    <main class="home-main">
+      <div class="app-container">
+        <!-- item display - flex -->
+        <div class="controls-container">
+          <% for (let i = 0; i< arrayToBeSent.length; i++){ %>
+          <div class="gift-container">
+            <div class="gift-image">
+              <a href="/itemDetails/<%= arrayToBeSent[i].id%> "
+                ><img src="<%= arrayToBeSent[i].imgSrc %>"
+              /></a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </main>
+    <%- include("layout/footer") %>
+  </body>
+</html>
