@@ -53,12 +53,26 @@ async function reply() {
 // call the reply function so it can always wait for notifications
 reply();
 
-function multipleStatuses() {
-  // if you want to make an external req, do it here
-  let emojis = ["!૮ ˶ᵔ ᵕ ᵔ˶ ა", "(˶˃ ᵕ ˂˶)!!", "`⎚⩊⎚´ -✧!", "!!"];
-  let rand = Math.floor(Math.random() * emojis.length);
-  let post = emojis[rand];
+async function boredapi() {
+  const url = "https://bored-api.appbrewery.com/random";
+  const response = await fetch(url);
+  let jsonData = await response.json();
+  success(jsonData);
+}
 
+function success(response) {
+  let activity = response.activity;
+  // console.log(activity);
+  let kaomoji = ["!૮ ˶ᵔ ᵕ ᵔ˶ ა", "(˶˃ ᵕ ˂˶)!!", "`⎚⩊⎚´ -✧!"];
+  let rand = Math.floor(Math.random() * kaomoji.length);
+  let randmoji = kaomoji[rand];
+
+  let post = activity + " " + randmoji + "!";
   makeStatus(post);
 }
+
+function multipleStatuses() {
+  boredapi();
+}
+
 setInterval(multipleStatuses, 15 * 60 * 1000);
