@@ -1,0 +1,271 @@
+body {
+  width: 5000px;
+  height: 5000px;
+  /* overflow: hidden; */
+
+  position: relative;
+  font-family: monospace;
+  margin: 0px;
+  font-size: 14px;
+  background-size: cover;
+  background-image: url(img/bg2.png);
+}
+
+.app-container {
+  margin: auto;
+  text-align: center;
+}
+
+/* Submit  */
+#formbtn img {
+  display: block;
+  width: 100px;
+  height: auto;
+  transition: transform 0.2s, opacity 0.2s; /* Add hover effects */
+}
+
+#formbtn img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  opacity: 0.9; /* Slight transparency effect */
+  filter: drop-shadow(0 0 0.75rem rgb(75, 42, 85));
+}
+
+#formbtn {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100px;
+  top: 1900px;
+  left: 2350px;
+  z-index: 999;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  display: block;
+  position: absolute;
+  top: 2100px;
+  left: 2150px;
+  background-color: rgba(214, 202, 221, 0.798);
+
+  text-align: left;
+  padding: 10px;
+  margin: auto;
+  width: 500px;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.input-instruction {
+  text-align: center;
+}
+
+.input-instruction ul {
+  text-align: left;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  border: 2px solid #7e7e7e;
+  border-top: 2px solid #d5d5d5;
+  border-left: 2px solid #d5d5d5;
+  font-family: monospace;
+}
+
+textarea {
+  padding: 8px;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: 2px;
+  border: 2px solid #7e7e7e;
+  border-top: 2px solid #d5d5d5;
+  border-left: 2px solid #d5d5d5;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-family: monospace;
+}
+
+input[type="submit"] {
+  padding: 3px 6px 2px;
+  border-radius: 2px;
+  background: rgb(163, 163, 163);
+  border: 2px solid #7e7e7e;
+  border-top: 2px solid #d5d5d5;
+  border-left: 2px solid #d5d5d5;
+  cursor: grab;
+  font-family: monospace;
+}
+
+/* new */
+.submit-container img {
+  width: 80px;
+}
+
+.post img {
+  width: 100px;
+}
+
+.post {
+  display: block;
+  position: absolute;
+}
+
+#linktosubmit {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#fountain {
+  display: block;
+  position: absolute;
+  top: 2000px;
+  left: 2000px;
+  z-index: 999;
+  filter: drop-shadow(0 0 0.75rem rgb(78, 56, 78));
+}
+
+#fountain img {
+  width: 800px;
+}
+
+/* Radio button */
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type="radio"]:checked + img {
+  outline: 2px dashed pink;
+}
+
+fieldset {
+  /* border: none; */
+  display: flex;
+  gap: 12px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.post-text {
+  padding: 10px;
+  width: 250px;
+  background-color: rgba(214, 202, 221, 0.798);
+}
+
+.plant-post {
+  width: 250px;
+}
+
+.plant-post summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Map */
+#map-container {
+  position: absolute;
+  background-image: url(img/map1.png);
+  background-size: cover;
+  top: 10px;
+  right: 10px;
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#map-container a {
+  display: inline-block;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  background: rgb(14, 31, 29);
+  position: absolute;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about-nav {
+  position: absolute;
+  top: 10px;
+  right: 160px;
+  background-color: gray;
+}
+
+#nav-container {
+  position: fixed;
+  top: 50px;
+  right: 10;
+  width: 200px;
+  height: 200px;
+  transition: top 0.3s;
+  z-index: 1001;
+}
+
+#map-caption {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 155px;
+  width: 125px;
+  text-align: right;
+  padding: 5 5 5 0;
+  background-color: rgba(214, 202, 221, 0.798);
+}
+
+#place1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(214, 202, 221, 0.5);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#place1 img {
+  width: 300px;
+}
+
+#place2 {
+  position: absolute;
+  top: 2500px;
+  right: 10px;
+  background-color: rgba(214, 202, 221, 0.5);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#place2 img {
+  width: 300px;
+}

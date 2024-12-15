@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="fountain">
+      <img src="img/fountain.png" />
+    </div>
+
+    <div id="nav-container">
+      <!-- ABOUT NAV (i kept the code here in case i change my mind later) -->
+      <!-- <button id="about-nav" onclick="showabout()">About</button>
+      <div id="about-div">
+      </div> -->
+
+      <!-- map -->
+      <div id="map-container">
+        <a href="#place1" style="top: 5%; left: 10%"> </a>
+        <a href="#place2" style="top: 50%; right: 10%"> </a>
+        <a href="#fountain" style="top: 50%; right: 50%"> </a>
+      </div>
+      <div id="map-caption">I'm your navigator. Try click on the dots.</div>
+    </div>
+
+    <!-- PlACEHOLDER DIV -->
+    <div id="place1">
+      <img src="img/construction.png" />
+    </div>
+    <div id="place2">
+      <img src="img/construction.png" />
+    </div>
+
+    <!-- form button -->
+    <button id="formbtn" onclick="showform()">
+      <img src="img/drop.png" />
+    </button>
+
+    <!-- form main -->
+    <div class="form-container" id="formdiv">
+      <h3 style="text-align: center">Garden of Forgotten Feelings</h3>
+      <p style="padding: 0 10; text-align: center">
+        A shared digital archive where buried emotions and overlooked memories
+        find a space to be released. Visitors are invited to reflect on their
+        forgotten feelings—whether repressed emotions or overlooked sentiments
+        that have lingered as heart knots—and connect with others through shared
+        stories.
+      </p>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <div class="form-content-container">
+          <div>
+            <label for="story"></label>
+            <textarea
+              type="text"
+              name="text"
+              id="item-description"
+              placeholder="Plant a forgotten feeling here... speak of an emotion long buried, yet never lost."
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <div class="submit-container">
+            <div class="selectplant-container">
+              <fieldset>
+                <legend>Select A Plant:</legend>
+                <label>
+                  <input
+                    type="radio"
+                    name="selectedplant"
+                    value="plant1"
+                    checked
+                  />
+                  <img src="img/plant1.png" alt="Option 1" />
+                </label>
+                <label>
+                  <input type="radio" name="selectedplant" value="plant2" />
+                  <img src="img/plant2.png" alt="Option 2" />
+                </label>
+                <label>
+                  <input type="radio" name="selectedplant" value="plant3" />
+                  <img src="img/plant3.png" alt="Option 2" />
+                </label>
+                <label>
+                  <input type="radio" name="selectedplant" value="plant4" />
+                  <img src="img/plant4.png" alt="Option 2" />
+                </label>
+                <label>
+                  <input type="radio" name="selectedplant" value="plant5" />
+                  <img src="img/plant5.png" alt="Option 2" />
+                </label>
+              </fieldset>
+            </div>
+            <div>
+              <input type="submit" name="submitbutton" value="Plant" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- All Plants -->
+    <div class="all-posts">
+      <% posts.forEach( (post) => { %>
+      <div class="post" id="<%= post._id%>">
+        <details class="plant-post">
+          <summary><img src="<%= post.selectedplant %>" /></summary>
+          <div class="post-text"><%= post.text %></div>
+        </details>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+
+  <!-- javascript  -->
+  <script>
+    // randomize position
+    function getRandomPosition(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    function randomizeDivsPosition() {
+      // Get all elements with the class 'randomize-location'
+      const divs = document.querySelectorAll(".post");
+
+      // Loop through each div and set a random position
+      divs.forEach((div) => {
+        // Get a random top and left position (in percentage, or pixels)
+        const randomTop = getRandomPosition(200, 4500);
+        const randomLeft = getRandomPosition(200, 4500);
+
+        // Set the position of the div
+        div.style.top = `${randomTop}px`;
+        div.style.left = `${randomLeft}px`;
+      });
+    }
+
+    // onclick to show form
+    function showform() {
+      var x = document.getElementById("formdiv");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    // onclick to show about (this is not used this time but save for later)
+    function showabout() {
+      var x = document.getElementById("about-div");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("nav-container").style.top = "0";
+      } else {
+        document.getElementById("nav-container").style.top = "-200px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    window.onload = function () {
+      window.scrollTo(1500, 1900);
+      randomizeDivsPosition();
+      showform();
+    };
+  </script>
+</html>
